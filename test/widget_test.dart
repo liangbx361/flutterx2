@@ -7,24 +7,32 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:kidflow/main.dart';
+import 'package:kidflow/global_providers.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    // Build the CounterPage inside a MaterialApp so Directionality/Theme exist,
+    // and use the global ProviderContainer for providers.
+    await tester.pumpWidget(
+      UncontrolledProviderScope(
+        container: globalContainer,
+        child: const MaterialApp(home: CounterPage()),
+      ),
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that our counter starts at 0 (AppBar title shows Count: 0).
+    expect(find.text('Count: 0'), findsOneWidget);
+    expect(find.text('Count: 1'), findsNothing);
 
-    // Tap the '+' icon and trigger a frame.
+    // Tap the FAB (plus) and trigger a frame.
     await tester.tap(find.byIcon(Icons.add));
     await tester.pump();
 
     // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Count: 0'), findsNothing);
+    expect(find.text('Count: 1'), findsOneWidget);
   });
 }

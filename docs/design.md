@@ -35,7 +35,7 @@
                 * xxx_rm.dart
             * view 负责定义视图模型
                 * xxx_vm.dart
-        * repos 封装业务数据的处理逻辑
+        * repositories 封装业务数据的处理逻辑
             * xxx_repo.dart
         * sources 负责定义数据源
             * local 负责定义本地数据源

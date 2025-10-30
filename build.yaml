@@ -1,0 +1,11 @@
+targets:
+  $default:
+    builders:
+      riverpod_generator|riverpod_generator:
+        enabled: true
+      retrofit_generator|retrofit:
+        enabled: true
+      json_serializable|json_serializable:
+        enabled: true
+      hive_ce_generator|hive_generator:
+        enabled: true

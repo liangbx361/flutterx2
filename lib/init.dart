@@ -10,6 +10,7 @@ void init(String env) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await initEnvConfig(env);
+  await EasyLocalization.ensureInitialized();
 
   runApp(
     EasyLocalization(

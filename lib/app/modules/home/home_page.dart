@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutterx2/app/app_providers.dart';
 import 'package:flutterx2/app/values/app_theme.dart';
 import 'package:flutterx2/app/values/locale_keys.g.dart';
@@ -19,6 +20,11 @@ class HomePage extends ConsumerWidget {
       appBar: AppBar(
         title: Text(LocaleKeys.app_title.tr()),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.language),
+            tooltip: LocaleKeys.common_language.tr(),
+            onPressed: () => context.push('/settings/language'),
+          ),
           IconButton(
             icon: Icon(theme.isDark ? Icons.light_mode : Icons.dark_mode),
             onPressed: () => ref.read(appThemeModeProvider.notifier).toggle(),

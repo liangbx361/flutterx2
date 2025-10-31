@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterx2/app/modules/home/home_page.dart';
 import 'package:flutterx2/app/modules/splash/splash_page.dart';
+import 'package:flutterx2/app/modules/settings/language_settings_page.dart';
 import 'package:flutterx2/app/router/route_guard.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -11,6 +12,7 @@ part 'app_router.g.dart';
 class AppRoutes {
   static const String splash = '/';
   static const String home = '/home';
+  static const String languageSettings = '/settings/language';
 
   // 防止实例化
   AppRoutes._();
@@ -32,6 +34,12 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         path: AppRoutes.home,
         builder: (context, state) => const HomePage(),
+      ),
+
+      // 语言设置页
+      GoRoute(
+        path: AppRoutes.languageSettings,
+        builder: (context, state) => const LanguageSettingsPage(),
       ),
     ],
 

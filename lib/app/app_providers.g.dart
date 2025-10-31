@@ -14,7 +14,8 @@ part of 'app_providers.dart';
 const appConfigProvider = AppConfigProvider._();
 
 /// 应用配置提供者
-final class AppConfigProvider extends $NotifierProvider<AppConfig, Map<String, dynamic>> {
+final class AppConfigProvider
+    extends $NotifierProvider<AppConfig, Map<String, dynamic>> {
   /// 应用配置提供者
   const AppConfigProvider._()
       : super(
@@ -54,8 +55,11 @@ abstract class _$AppConfig extends $Notifier<Map<String, dynamic>> {
   void runBuild() {
     final created = build();
     final ref = this.ref as $Ref<Map<String, dynamic>, Map<String, dynamic>>;
-    final element = ref.element as $ClassProviderElement<AnyNotifier<Map<String, dynamic>, Map<String, dynamic>>,
-        Map<String, dynamic>, Object?, Object?>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<Map<String, dynamic>, Map<String, dynamic>>,
+        Map<String, dynamic>,
+        Object?,
+        Object?>;
     element.handleValue(ref, created);
   }
 }
@@ -106,7 +110,8 @@ abstract class _$Counter extends $Notifier<int> {
   void runBuild() {
     final created = build();
     final ref = this.ref as $Ref<int, int>;
-    final element = ref.element as $ClassProviderElement<AnyNotifier<int, int>, int, Object?, Object?>;
+    final element = ref.element
+        as $ClassProviderElement<AnyNotifier<int, int>, int, Object?, Object?>;
     element.handleValue(ref, created);
   }
 }
@@ -117,7 +122,8 @@ abstract class _$Counter extends $Notifier<int> {
 const appThemeModeProvider = AppThemeModeProvider._();
 
 /// 主题模式提供者
-final class AppThemeModeProvider extends $NotifierProvider<AppThemeMode, ThemeMode> {
+final class AppThemeModeProvider
+    extends $NotifierProvider<AppThemeMode, ThemeMode> {
   /// 主题模式提供者
   const AppThemeModeProvider._()
       : super(
@@ -157,8 +163,8 @@ abstract class _$AppThemeMode extends $Notifier<ThemeMode> {
   void runBuild() {
     final created = build();
     final ref = this.ref as $Ref<ThemeMode, ThemeMode>;
-    final element =
-        ref.element as $ClassProviderElement<AnyNotifier<ThemeMode, ThemeMode>, ThemeMode, Object?, Object?>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<ThemeMode, ThemeMode>, ThemeMode, Object?, Object?>;
     element.handleValue(ref, created);
   }
 }
@@ -170,7 +176,8 @@ const currentThemeProvider = CurrentThemeProvider._();
 
 /// 当前主题数据提供者
 
-final class CurrentThemeProvider extends $FunctionalProvider<ThemeData, ThemeData, ThemeData>
+final class CurrentThemeProvider
+    extends $FunctionalProvider<ThemeData, ThemeData, ThemeData>
     with $Provider<ThemeData> {
   /// 当前主题数据提供者
   const CurrentThemeProvider._()
@@ -189,7 +196,8 @@ final class CurrentThemeProvider extends $FunctionalProvider<ThemeData, ThemeDat
 
   @$internal
   @override
-  $ProviderElement<ThemeData> $createElement($ProviderPointer pointer) => $ProviderElement(pointer);
+  $ProviderElement<ThemeData> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
 
   @override
   ThemeData create(Ref ref) {

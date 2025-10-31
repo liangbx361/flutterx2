@@ -69,3 +69,6 @@ The project uses multiple code generators:
 - `flutter packages pub run build_runner build --delete-conflicting-outputs`
 - `flutter test` (uses global container setup)
 - `flutter analyze` (configured via `analysis_options.yaml`)
+
+## Output Rules
+- Don't output documentation or explanations, only the code itself.

@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutterx2/app/app.dart';
 import 'package:flutterx2/app/app_localization.dart';
+import 'package:flutterx2/app/data/sources/local/hive_local_source.dart';
 
 import 'app/data/env_config.dart';
 
@@ -10,6 +11,7 @@ void init(String env) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await initEnvConfig(env);
+  await initLocalStorage();
   await EasyLocalization.ensureInitialized();
 
   runApp(
@@ -28,4 +30,10 @@ Future<void> initEnvConfig(String env) async {
   EnvConfig.init(
     env: env,
   );
+}
+
+/// Initialize local storage (Hive)
+Future<void> initLocalStorage() async {
+  final localStorage = HiveLocalSource();
+  await localStorage.init();
 }

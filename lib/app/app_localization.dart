@@ -7,6 +7,7 @@ class AppLocalization {
     Locale('en'), // English
     Locale('zh', 'Hans'), // 简体中文
     Locale('es'), // Español
+    Locale('ar'), // العربية (Arabic)
   ];
 
   /// 默认语言
@@ -31,6 +32,8 @@ class AppLocalization {
         return 'English';
       case 'es':
         return 'Español';
+      case 'ar':
+        return 'العربية';
       default:
         return locale.toString();
     }

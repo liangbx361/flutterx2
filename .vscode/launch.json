@@ -4,20 +4,19 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
         {
-            "name": "kidflow-app",
+            "name": "flutterx2-app",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "kidflow-app (profile mode)",
+            "name": "flutterx2-app (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "kidflow-app (release mode)",
+            "name": "flutterx2-app (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

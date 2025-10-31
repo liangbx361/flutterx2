@@ -1,7 +1,7 @@
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:kidflow/app/components/app_load_state_widget.dart';
-import 'package:kidflow/app/core/components/loader/load_state.dart';
+import 'package:flutterx2/app/components/app_load_state_widget.dart';
+import 'package:flutterx2/app/core/components/loader/load_state.dart';
 
 class AppPageScaffold extends StatelessWidget {
   final PreferredSizeWidget? header;

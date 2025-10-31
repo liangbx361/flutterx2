@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kidflow/app/core/components/image/local_image.dart';
+import 'package:flutterx2/app/core/components/image/local_image.dart';
 
 class NetworkImage extends StatelessWidget {
   final String url;

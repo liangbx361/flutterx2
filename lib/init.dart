@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:kidflow/app/app.dart';
-import 'package:kidflow/app/data/env_config.dart';
+import 'package:flutterx2/app/app.dart';
+
+import 'app/data/env_config.dart';
 
 void init(String env) async {
   WidgetsFlutterBinding.ensureInitialized();

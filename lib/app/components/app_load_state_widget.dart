@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kidflow/app/core/components/loader/load_state_widget.dart';
+import 'package:flutterx2/app/core/components/loader/load_state_widget.dart';
 
 class AppLoadStateWidget extends BaseLoadStateWidget {
   final Widget? loading;

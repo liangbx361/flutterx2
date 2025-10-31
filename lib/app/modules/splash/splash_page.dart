@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kidflow/app/components/app_page_scaffold.dart';
-import 'package:kidflow/app/modules/splash/splash_controller.dart';
+import 'package:flutterx2/app/components/app_page_scaffold.dart';
+import 'package:flutterx2/app/modules/splash/splash_controller.dart';
 
 class SplashPage extends ConsumerWidget {
   const SplashPage({
@@ -44,7 +44,7 @@ class SplashPage extends ConsumerWidget {
 
           // App Name
           Text(
-            'KidFlow',
+            'FlutterX2',
             style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Theme.of(context).primaryColor,

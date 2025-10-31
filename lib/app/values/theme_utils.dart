@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kidflow/app/values/app_theme.dart';
+import 'package:flutterx2/app/values/app_theme.dart';
 
 /// 主题工具类
 class ThemeUtils {

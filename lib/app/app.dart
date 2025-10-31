@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kidflow/app/app_providers.dart';
-import 'package:kidflow/app/router/app_router.dart';
-import 'package:kidflow/app/values/app_theme.dart';
+import 'package:flutterx2/app/app_providers.dart';
+import 'package:flutterx2/app/router/app_router.dart';
+import 'package:flutterx2/app/values/app_theme.dart';
 
 /// 全局容器实例，用于测试和应用状态管理
 final globalContainer = ProviderContainer();
@@ -20,7 +20,7 @@ class App extends StatelessWidget {
           final router = ref.watch(appRouterProvider);
 
           return MaterialApp.router(
-            title: 'KidFlow',
+            title: 'FlutterX2',
             routerConfig: router,
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kidflow/app/app_providers.dart';
-import 'package:kidflow/app/values/app_theme.dart';
+import 'package:flutterx2/app/app_providers.dart';
+import 'package:flutterx2/app/values/app_theme.dart';
 
 /// 首页 - 演示 Riverpod 使用
 class HomePage extends ConsumerWidget {
@@ -15,7 +15,7 @@ class HomePage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(appConfig['appName'] ?? 'KidFlow'),
+        title: Text(appConfig['appName'] ?? 'FlutterX2'),
         actions: [
           IconButton(
             icon: Icon(theme.isDark ? Icons.light_mode : Icons.dark_mode),

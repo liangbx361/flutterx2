@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:kidflow/app/data/enums/env_enum.dart';
-import 'package:kidflow/app/data/env_config.dart';
+import 'package:flutterx2/app/data/enums/env_enum.dart';
+import 'package:flutterx2/app/data/env_config.dart';
 import 'package:logger/logger.dart';
 
 class AppLogger {

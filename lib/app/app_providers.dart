@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterx2/app/values/app_theme.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:kidflow/app/values/app_theme.dart';
 
 part 'app_providers.g.dart';
 
@@ -10,7 +10,7 @@ class AppConfig extends _$AppConfig {
   @override
   Map<String, dynamic> build() {
     return {
-      'appName': 'KidFlow',
+      'appName': 'FlutterX2',
       'version': '0.1.0',
       'environment': 'development',
     };

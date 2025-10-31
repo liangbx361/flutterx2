@@ -1,7 +1,7 @@
-# KidFlow AI Coding Instructions
+# FlutterX2 AI Coding Instructions
 
 ## Project Overview
-KidFlow is a Flutter application using **Riverpod for state management** with code generation patterns. The project follows a clean architecture inspired by GetX patterns but adapted for Riverpod.
+FlutterX2 is a Flutter application using **Riverpod for state management** with code generation patterns. The project follows a clean architecture inspired by GetX patterns but adapted for Riverpod.
 
 ## Architecture Patterns
 
@@ -61,7 +61,7 @@ The project uses multiple code generators:
 - **Testing**: Global provider container enables consistent test setup across widget and integration tests
 
 ### Import Patterns
-- Use package imports: `import 'package:kidflow/...'` for cross-module references
+- Use package imports: `import 'package:flutterx2/...'` for cross-module references
 - Relative imports for files within same directory/module
 - Generated files require `part` directives for code generation
 

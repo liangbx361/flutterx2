@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutterx2/app/modules/home/home_page.dart';
+import 'package:flutterx2/app/modules/splash/splash_page.dart';
+import 'package:flutterx2/app/router/route_guard.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:kidflow/app/modules/splash/splash_page.dart';
-import 'package:kidflow/app/modules/home/home_page.dart';
-import 'package:kidflow/app/router/route_guard.dart';
 
 part 'app_router.g.dart';
 

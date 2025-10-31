@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutterx2/app/core/components/loader/load_state.dart';
+import 'package:flutterx2/app/router/app_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:kidflow/app/core/components/loader/load_state.dart';
-import 'package:kidflow/app/router/app_router.dart';
 
 part 'splash_controller.g.dart';
 

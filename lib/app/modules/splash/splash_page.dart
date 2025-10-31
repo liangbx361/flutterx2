@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutterx2/app/components/app_page_scaffold.dart';
 import 'package:flutterx2/app/modules/splash/splash_controller.dart';
 import 'package:flutterx2/app/values/locale_keys.g.dart';
+import 'package:flutterx2/app/core/components/responsive/responsive.dart';
 
 class SplashPage extends ConsumerWidget {
   const SplashPage({
@@ -29,41 +30,49 @@ class SplashPage extends ConsumerWidget {
         children: [
           // App Logo
           Container(
-            width: 120,
-            height: 120,
+            width: context.responsiveValue(
+              mobile: 100.0,
+              tablet: 120.0,
+              desktop: 140.0,
+            ),
+            height: context.responsiveValue(
+              mobile: 100.0,
+              tablet: 120.0,
+              desktop: 140.0,
+            ),
             decoration: BoxDecoration(
               color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: ResponsiveRadius.all(context, 20),
             ),
-            child: const Icon(
+            child: Icon(
               Icons.child_care,
-              size: 60,
+              size: ResponsiveIconSize.xl(context),
               color: Colors.white,
             ),
           ),
 
-          const SizedBox(height: 40),
+          ResponsiveSpacing.verticalSpace(context, 40),
 
           // App Name
           Text(
             LocaleKeys.app_title.tr(),
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).primaryColor,
-                ),
+            style: ResponsiveTextStyles.displayMedium(context).copyWith(
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).primaryColor,
+            ),
           ),
 
-          const SizedBox(height: 8),
+          ResponsiveSpacing.vSpaceXS,
 
           // App Slogan
           Text(
             LocaleKeys.app_slogan.tr(),
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: Colors.grey[600],
-                ),
+            style: ResponsiveTextStyles.bodyLarge(context).copyWith(
+              color: Colors.grey[600],
+            ),
           ),
 
-          const SizedBox(height: 60),
+          ResponsiveSpacing.verticalSpace(context, 60),
 
           // Loading Indicator
           CircularProgressIndicator(
@@ -72,19 +81,19 @@ class SplashPage extends ConsumerWidget {
             ),
           ),
 
-          const SizedBox(height: 20),
+          ResponsiveSpacing.vSpaceMD,
 
           // Loading Text
           Text(
             controller.currentTask ?? LocaleKeys.common_initializing.tr(),
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Colors.grey[600],
-                ),
+            style: ResponsiveTextStyles.bodyMedium(context).copyWith(
+              color: Colors.grey[600],
+            ),
           ),
 
           // Error Retry Button (if needed)
           if (controller.hasError) ...[
-            const SizedBox(height: 20),
+            ResponsiveSpacing.vSpaceMD,
             ElevatedButton(
               onPressed: () {
                 ref.read(splashControllerProvider.notifier).retry();

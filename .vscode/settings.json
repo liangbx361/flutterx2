@@ -1,5 +1,5 @@
 {
-  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.configuration.updateBuildConfiguration": "interactive",
   "editor.wordWrap": "off",
   "editor.wordWrapColumn": 120,
   "chat.editor.wordWrap": "off",

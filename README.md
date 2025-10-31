@@ -2,6 +2,16 @@
 
 基于当前对Flutter开发的理解，整理新的APP开发脚手架，命名为FlutterX V2版本。
 
+## 特性
+
+* 页面脚手架
+* 路由管理
+* 主题管理
+* 国际化支持
+* RTL支持
+* 响应式布局
+* 数据管理
+
 ## 架构组件选型
 
 * Riverpod 3.x 作为状态管理
@@ -14,4 +24,3 @@
 * flutter_svg 作为SVG图标支持
 * cached_network_image 作为网络图片缓存
 * lottie 作为动画支持
-

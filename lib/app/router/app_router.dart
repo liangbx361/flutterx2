@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterx2/app/modules/home/home_page.dart';
 import 'package:flutterx2/app/modules/splash/splash_page.dart';
@@ -18,13 +19,39 @@ class AppRoutes {
   AppRoutes._();
 }
 
+/// 路由转场动画配置
+class RouteTransitions {
+  /// 转场动画时长
+  static const Duration transitionDuration = Duration(milliseconds: 500);
+
+  /// Cupertino 风格转场动画
+  static Page<T> cupertinoPage<T>({
+    required Widget child,
+    required GoRouterState state,
+  }) {
+    return CustomTransitionPage<T>(
+      key: state.pageKey,
+      child: child,
+      transitionDuration: transitionDuration,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return CupertinoPageTransition(
+          primaryRouteAnimation: animation,
+          secondaryRouteAnimation: secondaryAnimation,
+          linearTransition: false,
+          child: child,
+        );
+      },
+    );
+  }
+}
+
 /// 路由配置 Provider - 保持全局生命周期
 @Riverpod(keepAlive: true)
 GoRouter appRouter(Ref ref) {
   return GoRouter(
     initialLocation: AppRoutes.splash,
     routes: [
-      // 启动页
+      // 启动页（无动画，直接显示）
       GoRoute(
         path: AppRoutes.splash,
         builder: (context, state) => const SplashPage(),
@@ -33,13 +60,19 @@ GoRouter appRouter(Ref ref) {
       // 首页
       GoRoute(
         path: AppRoutes.home,
-        builder: (context, state) => const HomePage(),
+        pageBuilder: (context, state) => RouteTransitions.cupertinoPage(
+          child: const HomePage(),
+          state: state,
+        ),
       ),
 
       // 语言设置页
       GoRoute(
         path: AppRoutes.languageSettings,
-        builder: (context, state) => const LanguageSettingsPage(),
+        pageBuilder: (context, state) => RouteTransitions.cupertinoPage(
+          child: const LanguageSettingsPage(),
+          state: state,
+        ),
       ),
     ],
 

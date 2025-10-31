@@ -1,3 +1,5 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class EnvConfig {
   static EnvConfig? _instance;
 
@@ -15,4 +17,14 @@ class EnvConfig {
   }
 
   late String env;
+
+  /// Get base URL based on environment
+  String get baseUrl {
+    final urlFromEnv = dotenv.env['DEV_RUSH_BASE_URL'];
+    if (urlFromEnv != null && urlFromEnv.isNotEmpty) {
+      return urlFromEnv;
+    }
+    // Fallback to hardcoded URL if not in .env
+    return 'https://api.example.com';
+  }
 }

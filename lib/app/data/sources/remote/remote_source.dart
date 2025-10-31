@@ -1,15 +1,28 @@
 import 'package:dio/dio.dart';
+import 'package:flutterx2/app/data/env_config.dart';
+import 'package:flutterx2/app/data/sources/local/local_source.dart';
+import 'package:flutterx2/app/data/sources/remote/interceptors/auth_interceptor.dart';
+import 'package:flutterx2/app/data/sources/remote/interceptors/retry_interceptor.dart';
+import 'package:flutter/foundation.dart';
 
-abstract class RemoteSource {}
+abstract class RemoteSource {
+  Dio get dio;
+}
 
 class RemoteSourceImpl implements RemoteSource {
   late final Dio _dio;
+  final LocalSource _localSource;
 
-  RemoteSourceImpl() {
-    _dio = createDio("https://api.example.com");
+  RemoteSourceImpl(this._localSource) {
+    _dio = createDio();
   }
 
-  Dio createDio(String baseUrl) {
+  @override
+  Dio get dio => _dio;
+
+  Dio createDio() {
+    final baseUrl = EnvConfig.instance.baseUrl;
+
     final dio = Dio(
       BaseOptions(
         baseUrl: baseUrl,
@@ -19,27 +32,29 @@ class RemoteSourceImpl implements RemoteSource {
         responseType: ResponseType.json,
         headers: {
           'Accept': 'application/json',
+          'Content-Type': 'application/json',
         },
       ),
     );
 
-    // dio.interceptors.addAll([
-    //   // 统一鉴权拦截
-    //   InterceptorsWrapper(onRequest: (options, handler) async {
-    //     final token = await loadToken(); // 自己实现
-    //     if (token != null) {
-    //       options.headers['Authorization'] = 'Bearer $token';
-    //     }
-    //     handler.next(options);
-    //   }),
-    //   // 日志（开发环境再开）
-    //   LogInterceptor(requestBody: true, responseBody: false),
-    //   // 简单重试：仅对 GET/HEAD，指数退避
-    //   _RetryOnNetworkError(
-    //     shouldRetry: (r) => ['GET', 'HEAD'].contains(r.requestOptions.method),
-    //     maxAttempts: 3,
-    //   ),
-    // ]);
+    // Add interceptors in order: logging -> auth -> retry
+    dio.interceptors.addAll([
+      // Use Dio's built-in LogInterceptor (debug mode only)
+      if (kDebugMode)
+        LogInterceptor(
+          requestBody: true,
+          responseBody: true,
+          requestHeader: true,
+          responseHeader: false,
+          error: true,
+        ),
+      AuthInterceptor(_localSource),
+      RetryInterceptor(
+        maxRetries: 3,
+        initialDelay: const Duration(seconds: 1),
+        backoffMultiplier: 2.0,
+      ),
+    ]);
 
     return dio;
   }

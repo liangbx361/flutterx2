@@ -1,0 +1,46 @@
+{
+    "app_title": "FlutterX2",
+    "app_slogan": "مرافقة النمو الصحي للأطفال",
+    "common": {
+        "welcome": "مرحباً",
+        "hello": "مرحباً، {name}!",
+        "settings": "الإعدادات",
+        "language": "اللغة",
+        "theme": "المظهر",
+        "light": "فاتح",
+        "dark": "داكن",
+        "system": "النظام",
+        "home": "الرئيسية",
+        "profile": "الملف الشخصي",
+        "logout": "تسجيل الخروج",
+        "error": "خطأ",
+        "success": "نجح",
+        "cancel": "إلغاء",
+        "confirm": "تأكيد",
+        "save": "حفظ",
+        "delete": "حذف",
+        "edit": "تعديل",
+        "loading": "جارٍ التحميل...",
+        "initializing": "جارٍ التهيئة...",
+        "no_data": "لا توجد بيانات",
+        "retry": "إعادة المحاولة",
+        "back": "رجوع",
+        "close": "إغلاق",
+        "english": "English",
+        "chinese": "简体中文",
+        "spanish": "Español"
+    },
+    "home": {
+        "welcome_to_app": "مرحباً بك في {appName}!",
+        "version": "الإصدار: {version}",
+        "counter_demo": "عرض العداد",
+        "decrement": "تقليل",
+        "reset": "إعادة تعيين",
+        "increment": "زيادة",
+        "coming_soon": "قريباً",
+        "more_features": "المزيد من الميزات المثيرة قريباً..."
+    },
+    "splash": {
+        "loading_text": "جارٍ التحميل..."
+    }
+}

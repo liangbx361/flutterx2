@@ -72,3 +72,4 @@ The project uses multiple code generators:
 
 ## Output Rules
 - Don't output documentation or explanations, only the code itself.
+- Don't output sample files unless explicitly requested.

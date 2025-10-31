@@ -1,0 +1,46 @@
+{
+    "app_title": "FlutterX2",
+    "app_slogan": "Acompañar el crecimiento saludable de los niños",
+    "common": {
+        "welcome": "Bienvenido",
+        "hello": "¡Hola, {name}!",
+        "settings": "Configuración",
+        "language": "Idioma",
+        "theme": "Tema",
+        "light": "Claro",
+        "dark": "Oscuro",
+        "system": "Sistema",
+        "home": "Inicio",
+        "profile": "Perfil",
+        "logout": "Cerrar sesión",
+        "error": "Error",
+        "success": "Éxito",
+        "cancel": "Cancelar",
+        "confirm": "Confirmar",
+        "save": "Guardar",
+        "delete": "Eliminar",
+        "edit": "Editar",
+        "loading": "Cargando...",
+        "initializing": "Inicializando...",
+        "no_data": "Sin datos disponibles",
+        "retry": "Reintentar",
+        "back": "Atrás",
+        "close": "Cerrar",
+        "english": "English",
+        "chinese": "简体中文",
+        "spanish": "Español"
+    },
+    "home": {
+        "welcome_to_app": "¡Bienvenido a {appName}!",
+        "version": "Versión: {version}",
+        "counter_demo": "Demostración de Contador",
+        "decrement": "Disminuir",
+        "reset": "Restablecer",
+        "increment": "Aumentar",
+        "coming_soon": "Próximamente",
+        "more_features": "Más características emocionantes próximamente..."
+    },
+    "splash": {
+        "loading_text": "Cargando..."
+    }
+}

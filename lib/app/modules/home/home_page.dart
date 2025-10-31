@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutterx2/app/app_providers.dart';
 import 'package:flutterx2/app/values/app_theme.dart';
+import 'package:flutterx2/app/values/locale_keys.g.dart';
 
 /// 首页 - 演示 Riverpod 使用
 class HomePage extends ConsumerWidget {
@@ -15,7 +17,7 @@ class HomePage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(appConfig['appName'] ?? 'FlutterX2'),
+        title: Text(LocaleKeys.app_title.tr()),
         actions: [
           IconButton(
             icon: Icon(theme.isDark ? Icons.light_mode : Icons.dark_mode),
@@ -46,13 +48,13 @@ class HomePage extends ConsumerWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'Welcome to ${appConfig['appName']}!',
+                        LocaleKeys.home_welcome_to_app.tr(namedArgs: {'appName': appConfig['appName'] ?? 'FlutterX2'}),
                         style: theme.textTheme.headlineMedium,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Version: ${appConfig['version']}',
+                        LocaleKeys.home_version.tr(namedArgs: {'version': appConfig['version'] ?? '1.0.0'}),
                         style: theme.textTheme.bodyMedium,
                       ),
                     ],
@@ -67,7 +69,7 @@ class HomePage extends ConsumerWidget {
                   child: Column(
                     children: [
                       Text(
-                        'Counter Demo',
+                        LocaleKeys.home_counter_demo.tr(),
                         style: theme.textTheme.headlineSmall,
                       ),
                       const SizedBox(height: 20),
@@ -99,19 +101,19 @@ class HomePage extends ConsumerWidget {
                             icon: Icons.remove,
                             onPressed: () => ref.read(counterProvider.notifier).decrement(),
                             backgroundColor: AppTheme.errorColor,
-                            tooltip: 'Decrement',
+                            tooltip: LocaleKeys.home_decrement.tr(),
                           ),
                           _CounterButton(
                             icon: Icons.refresh,
                             onPressed: () => ref.read(counterProvider.notifier).reset(),
                             backgroundColor: AppTheme.warningColor,
-                            tooltip: 'Reset',
+                            tooltip: LocaleKeys.home_reset.tr(),
                           ),
                           _CounterButton(
                             icon: Icons.add,
                             onPressed: () => ref.read(counterProvider.notifier).increment(),
                             backgroundColor: AppTheme.successColor,
-                            tooltip: 'Increment',
+                            tooltip: LocaleKeys.home_increment.tr(),
                           ),
                         ],
                       ),
@@ -127,12 +129,12 @@ class HomePage extends ConsumerWidget {
                   child: Column(
                     children: [
                       Text(
-                        'Coming Soon',
+                        LocaleKeys.home_coming_soon.tr(),
                         style: theme.textTheme.headlineSmall,
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        '更多精彩功能即将上线...',
+                        LocaleKeys.home_more_features.tr(),
                         style: theme.textTheme.bodyMedium,
                         textAlign: TextAlign.center,
                       ),

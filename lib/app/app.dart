@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutterx2/app/app_providers.dart';
 import 'package:flutterx2/app/router/app_router.dart';
 import 'package:flutterx2/app/values/app_theme.dart';
@@ -26,6 +27,10 @@ class App extends StatelessWidget {
             darkTheme: AppTheme.darkTheme,
             themeMode: themeMode,
             debugShowCheckedModeBanner: false,
+            // 国际化配置
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
           );
         },
       ),

@@ -8,6 +8,45 @@ part of 'app_providers.dart';
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
+/// 应用包信息提供者（异步）
+
+@ProviderFor(packageInfo)
+const packageInfoProvider = PackageInfoProvider._();
+
+/// 应用包信息提供者（异步）
+
+final class PackageInfoProvider extends $FunctionalProvider<
+        AsyncValue<PackageInfo>, PackageInfo, FutureOr<PackageInfo>>
+    with $FutureModifier<PackageInfo>, $FutureProvider<PackageInfo> {
+  /// 应用包信息提供者（异步）
+  const PackageInfoProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'packageInfoProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$packageInfoHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<PackageInfo> $createElement(
+          $ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<PackageInfo> create(Ref ref) {
+    return packageInfo(ref);
+  }
+}
+
+String _$packageInfoHash() => r'e85c18fc1df698cf58e72da2ff3d20b5e68db434';
+
 /// 应用配置提供者
 
 @ProviderFor(AppConfig)
@@ -44,7 +83,7 @@ final class AppConfigProvider
   }
 }
 
-String _$appConfigHash() => r'f104055ded537cdc4ed4b9c65d094e3192db3027';
+String _$appConfigHash() => r'da99dbfa3f682d9ee7a5c2a460beeab28e189a02';
 
 /// 应用配置提供者
 

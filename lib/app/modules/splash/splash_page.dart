@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutterx2/app/components/app_page_scaffold.dart';
 import 'package:flutterx2/app/modules/splash/splash_controller.dart';
+import 'package:flutterx2/app/values/locale_keys.g.dart';
 
 class SplashPage extends ConsumerWidget {
   const SplashPage({
@@ -44,7 +46,7 @@ class SplashPage extends ConsumerWidget {
 
           // App Name
           Text(
-            'FlutterX2',
+            LocaleKeys.app_title.tr(),
             style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Theme.of(context).primaryColor,
@@ -55,7 +57,7 @@ class SplashPage extends ConsumerWidget {
 
           // App Slogan
           Text(
-            '陪伴孩子健康成长',
+            LocaleKeys.app_slogan.tr(),
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: Colors.grey[600],
                 ),
@@ -74,7 +76,7 @@ class SplashPage extends ConsumerWidget {
 
           // Loading Text
           Text(
-            controller.currentTask ?? '正在启动...',
+            controller.currentTask ?? LocaleKeys.common_initializing.tr(),
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Colors.grey[600],
                 ),
@@ -87,7 +89,7 @@ class SplashPage extends ConsumerWidget {
               onPressed: () {
                 ref.read(splashControllerProvider.notifier).retry();
               },
-              child: const Text('重试'),
+              child: Text(LocaleKeys.common_retry.tr()),
             ),
           ],
         ],

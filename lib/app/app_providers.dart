@@ -1,19 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:flutterx2/app/values/app_theme.dart';
+import 'package:flutterx2/app/data/env_config.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 part 'app_providers.g.dart';
+
+/// 应用包信息提供者（异步）
+@riverpod
+Future<PackageInfo> packageInfo(Ref ref) async {
+  return await PackageInfo.fromPlatform();
+}
 
 /// 应用配置提供者
 @riverpod
 class AppConfig extends _$AppConfig {
   @override
   Map<String, dynamic> build() {
-    return {
-      'appName': 'FlutterX2',
-      'version': '0.1.0',
-      'environment': 'development',
-    };
+    // 监听 packageInfo 异步数据
+    final packageInfoAsync = ref.watch(packageInfoProvider);
+
+    return packageInfoAsync.when(
+      data: (info) => {
+        'appName': info.appName.isEmpty ? 'FlutterX2' : info.appName,
+        'version': info.version,
+        'buildNumber': info.buildNumber,
+        'packageName': info.packageName,
+        'environment': EnvConfig.instance.env,
+      },
+      loading: () => {
+        'appName': 'FlutterX2',
+        'version': '0.1.0',
+        'buildNumber': '1',
+        'packageName': 'com.example.flutterx2',
+        'environment': EnvConfig.instance.env,
+      },
+      error: (_, __) => {
+        'appName': 'FlutterX2',
+        'version': '0.1.0',
+        'buildNumber': '1',
+        'packageName': 'com.example.flutterx2',
+        'environment': EnvConfig.instance.env,
+      },
+    );
   }
 
   /// 更新应用配置

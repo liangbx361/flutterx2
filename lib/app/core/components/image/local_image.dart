@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutterx2/app/core/components/image/lottie_image.dart';
+import 'package:flutterx2/app/core/components/image/svg_image.dart';
 
 class LocalImage extends StatelessWidget {
   final String path;

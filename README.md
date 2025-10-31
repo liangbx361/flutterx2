@@ -1,16 +1,17 @@
-# kidflow
+# FlutterX V2版本
 
-A new Flutter project.
+基于当前对Flutter开发的理解，整理新的APP开发脚手架，命名为FlutterX V2版本。
 
-## Getting Started
+## 架构组件选型
 
-This project is a starting point for a Flutter application.
+* Riverpod 3.x 作为状态管理
+* Dio + Retrofit 作为网络请求库
+* go_router 作为路由管理
+* hive 作为本地存储
+* event_bus 作为事件总线
+* custom_refresh_indicator 作为下拉刷新组件
+* logger 作为日志打印
+* flutter_svg 作为SVG图标支持
+* cached_network_image 作为网络图片缓存
+* lottie 作为动画支持
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
